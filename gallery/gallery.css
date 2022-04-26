@@ -1,0 +1,73 @@
+body {
+  background-color:#1d1d1d !important;
+  font-family: "Asap", sans-serif;
+  color:#989898;
+  font-size:16px;
+}
+
+#demo {
+  height:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+.fancybox-skin{
+	padding: 4px !important;
+	background: #ff7800;
+}
+.fancybox-item{
+	color: #0000;
+}
+.fancybox-close{
+	color: #0000;
+	background-image: url(fancybox_sprite.png);
+}
+.fancybox-prev span{
+	background-image: url(fancybox_sprite.png);
+}
+.fancybox-next span{
+	background-image: url(fancybox_sprite.png);
+}
+.fancybox{
+	color: #0000;
+}
+
+.green{
+  background-color:#6fb936;
+}
+        .thumb{
+        }
+        
+        .page-top{
+        }
+
+   
+img.zoom {
+	box-shadow:0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+	margin: 20px;
+    height: 200px;
+    border-radius:5px;
+    object-fit:cover;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+}
+        
+ 
+.transition {
+    -webkit-transform: scale(1.2); 
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+    .modal-header {
+   
+     border-bottom: none;
+}
+    .modal-title {
+        color:#000;
+    }
+    .modal-footer{
+      display:none;  
+    }
