@@ -54,16 +54,26 @@
 											<img src="images/me.jpg" style="width: 18em; height:auto" class="image"/>
 										</section>
 									</section>
+									</br>
 							</div>
 							<div class="col-8 col-12-medium imp-medium">
 								<!-- Content -->
 									<section id="content">
 										<p><strong>
-											Dobrogo vechora!</br>
-											I am Giorgi Ivanishvili, self made DIY maker. Most of the time working on own projects with open source software Qt / GCC / KiCad / FreeCad / Inkscape... Half of a day, working at company just to pay home rent and for improving some own skills (also staying at home all the days gets boring).<br><br>
-											Website contains my most complete projects, and I am highly motivated to publish much more. If you are also DIY Maker or provide a company with similar interests, collaboration on open source projects always welcome.
+											Hello!</br>
+											&nbspI am Giorgi Ivanishvili, self made DIY maker. This website contains my most complete open source projects, and I am highly motivated to publish much more. If you are also DIY Maker or provide a company with interests on similar open source projects, collaboration always welcome.
 										</strong></p>
-										<p><strong>Contact:</strong> <a href="https://www.instagram.com/rocket_scientist.me/">instagram.com/rocket_scientist.me</a></p>
+										</br>
+										
+										<p><strong>My skills chart:</strong></p>
+										<div id="skillsChart" style="margin: 0 auto"></div>
+										</br>
+
+										<p style="margin-bottom: 0">
+										<strong>Contact:</strong>
+										</p>
+										<p>&nbsp Instagram: <a target="_blank" href="https://www.instagram.com/rocket_scientist.me/">@rocket_scientist.me</a></p>
+										</br>
 									</section>
 							</div>
 						</div>
@@ -98,7 +108,126 @@
 			<script src="gallery/jquery.min.js"></script>
 			<script src="gallery/jquery.fancybox.min.js"></script>
 			<script src="gallery/gallery.js"></script>
-			<!-- Gallery -->
+			<!-- Chart -->
+			<script src="apexcharts/apexcharts.js"></script>
 
+		<!-- Skills chart -->
+		<script>
+			var options = {
+
+				responsive: [
+					{
+					breakpoint: 672,
+						options: {
+							chart: {
+								width: 410,
+							},
+
+							legend: {
+								position: "top",
+							},
+
+							plotOptions: {
+								pie: {
+									donut: {
+										labels: {
+											value: {
+												offsetY: 0
+											},
+											total: {
+												fontSize: '11px'
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				],
+
+				chart: {
+					width: 620,
+					type: "donut"
+				},
+
+				stroke: {
+				  width: 1,
+				},
+
+				//colors: ["#1ab7ea", "#0084ff", "#39539E", "#0077B5"],
+
+				dataLabels: {
+					enabled: false
+				},
+
+				plotOptions: {
+					pie: {
+						donut: {
+							labels: {
+								show: true,
+								name: {
+									show: true,
+									color: 'white',
+									offsetY: -10
+								},
+
+								value: {
+									show: true,
+									fontSize: '16px',
+									fontFamily: 'Helvetica, Arial, sans-serif',
+									color: undefined,
+									offsetY: 16,
+									formatter: function (val) {
+										return val + "%"
+									}
+								},
+								total: {
+									show: true,
+									label: 'Total',
+									color: '#373d3f',
+									fontSize: '14px',
+									fontFamily: 'Rubik',
+									formatter: function (w) {
+										return w.globals.seriesTotals.reduce((a, b) => {
+											return "100%"//a + b
+										}, 0)
+									}
+								}
+							}
+						}
+					}
+				},
+
+				series: [40, 20, 25, 10, 5],
+				labels: [
+					'Embedded / C',
+					'Qt / C++',
+					'Electronics Design / KiCad',
+					'Vector Graphics / Inkscape',
+					'FreeCad / Kotlin / Other'
+				],
+
+				tooltip: {
+					enabled: false
+				},
+
+				legend: {
+					show: true,
+					position: "left",
+					horizontalAlign: 'left',
+					fontSize: '14px',
+					fontFamily: 'Helvetica, Arial',
+					fontWeight: 400,
+					labels: {
+						colors: ['white'],
+						useSeriesColors: false
+					}
+				},
+
+			};
+
+			var chart = new ApexCharts(document.querySelector("#skillsChart"), options);
+			chart.render();
+		</script>
 	</body>
 </html>
